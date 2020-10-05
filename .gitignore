@@ -1,0 +1,8 @@
+# GitHub-Page Git-ignore List
+
+# build-target
+_site/
+.sass-cache/
+
+
+
