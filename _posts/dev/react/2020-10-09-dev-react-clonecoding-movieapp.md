@@ -124,7 +124,7 @@ class Home extends React.Component {
         ) : (
           <div className="movies"> {
             movies.map(movie => {
-              return <Movie key={movie.id} id={movie.id} year={movie.year} title={movie.title} summary={movie.summary} poster={movie.medium_cover_image} genres={movie.genres} />;
+              return <Movie key={movie.id} year={movie.year} title={movie.title} summary={movie.summary} poster={movie.medium_cover_image} genres={movie.genres} />;
             })
           }
           </div>
@@ -145,7 +145,10 @@ state를 관리하기때문에 Class-Component로 구현했다.
 state는 영화데이터 로딩완료상태를 체크하기위해 boolean타입의 isLoading과 영화 데이터를 관리할 수 있도록 movies 배열을 정의했다.
 
 OpenAPI로부터 영화 데이터 수신이 완료되면 movies 배열에 데이터가 담기게 되는데 movies.map(); 함수를 사용해서 각 영화 데이터들을 Movie-Component로 보내 영화 카드를 만들 수 있도록 구현했다.
-이 때 사용하진 않지만 key props를 전달하는데, React에서는 props의 유일성을 보장하기 위해 key를 반드시 전달해야 한다.
+이 때 key props를 넘기도록 구현했는데 Movie Component로 key props가 전달되진 않는다.
+(~~key props는 React내부에서 사용하는 특수한 props~~)  
+
+React에서는 Component의 유일성을 보장하기 위해 key를 반드시 전달해야 한다.
 
 <u>state는 직접 변수에 접근하여 수정하지않고, setState(); 메서드를 통해 간접적으로 데이터를 변경한다.</u>
 <hr>
