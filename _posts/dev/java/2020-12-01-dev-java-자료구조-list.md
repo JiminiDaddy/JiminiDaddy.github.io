@@ -17,12 +17,12 @@ List에는 크게 ArrayList와 LinkedList로 나뉘어진다.
 많은 책들과 인터넷 블로그 등을 통해 공부하다보면 두 클래스의 특징, 장단점 등이 잘 설명되어있다.
 대표적인 내용으로 아래와 같은 특징들이 있다.
 <hr>
-#### ArrayList
+<strong>ArrayList</strong>
 각 데이터의 인덱스를 가지고 있으므로 검색할 때 빠르다.
 중간에 데이터를 추가/삭제할 경우 해당 인덱스의 뒷부분들은 모두 한블럭씩 뒤로 밀리거나 앞으로 당겨지므로 추가/삭제될 인덱스의 뒷부분의 양이 많다면 성능이 크게 저하된다.
 
 <hr>
-#### LinkedList
+<strong>LinkedList</strong>
 내부적으로 양방향 연결 리스트로 이루어져 있기 때문에 참조하려는 요소의 위치에 따라 순방향으로 순회할지 역방향으로 순회할지 정해진다.
 검색할 때 Head or Tail부터 하나씩 차례대로 노드를 찾는 방식이므로 검색에서 성능이 저하된다.
 데이터를 추가/삭제 할 경우 마지막 노드가 가리키는 주소값만 변경하면되므로 ArrayList에서 요소들이 밀리거나 당겨지는 현상은 없다.
@@ -205,6 +205,7 @@ public E get(int index) {
 <hr>
 다음은 ArrayList의 get 메서드 구현부의 코드다.
 index로 요소를 바로 찾아가므로 시간복잡도가 O(1)로 되어 LinkedList보다 빠를 것이라는게 확인되었다.
+
 ```java
  public E get(int index) {
         rangeCheck(index);
