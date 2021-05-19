@@ -39,20 +39,20 @@ Subscriber입장에서 메시지를 누가 전송했느냐가 아니라 구독�
 
 ### FCM PushService를 위한 Key 발급 과정   
 <div class="mermaid"> 
-sequenceDiagram;
-    Mobile ->> FCM-Server: 등록 요청(with SenderId)
-    FCM-Server -->> FCM-Server: Register-Token 생성(by SenderId)
-    FCM-Server ->> Mobile: Register-Token 전송
-    Mobile ->> App-Server: Register-Token 전송
-    App-Server -->> App-Server: Register-Token 저장
+sequenceDiagram;  
+    Mobile ->> FCM-Server: 등록 요청(with SenderId)  
+    FCM-Server -->> FCM-Server: Register-Token 생성(by SenderId)  
+    FCM-Server ->> Mobile: Register-Token 전송  
+    Mobile ->> App-Server: Register-Token 전송  
+    App-Server -->> App-Server: Register-Token 저장  
 </div>
 
 ### FCM PushService를 이용해 메시지 전달 과정  
 <div class="mermaid"> 
 sequenceDiagram;
-    App-Server ->> FCM-Server: Http Post방식으로 메시지 전송<br/>(with Register-Token, Firebase-API-Key)
-    FCM-Server -->> FCM-Server: Register-Token 으로부터 Target 식별<br/>(Platform, Application)
-    FCM-Server ->> Mobile: 메시지 전송
+    App-Server ->> FCM-Server: Http Post방식으로 메시지 전송<br/>(with Register-Token, Firebase-API-Key)  
+    FCM-Server -->> FCM-Server: Register-Token 으로부터 Target 식별<br/>(Platform, Application)  
+    FCM-Server ->> Mobile: 메시지 전송  
 </div>  
 
 <hr>
