@@ -40,19 +40,19 @@ Subscriber입장에서 메시지를 누가 전송했느냐가 아니라 구독�
 ### FCM PushService를 위한 Key 발급 과정   
 <div class="mermaid"> 
 sequenceDiagram;  
-    Mobile ->> FCM-Server: 등록 요청(with SenderId)  
-    FCM-Server -->> FCM-Server: Register-Token 생성(by SenderId)  
-    FCM-Server ->> Mobile: Register-Token 전송  
-    Mobile ->> App-Server: Register-Token 전송  
-    App-Server -->> App-Server: Register-Token 저장  
+    Mobile ->> FCM-Server: 등록 요청(with SenderId)<br>
+    FCM-Server -->> FCM-Server: Register-Token 생성(by SenderId)<br>
+    FCM-Server ->> Mobile: Register-Token 전송<br>
+    Mobile ->> App-Server: Register-Token 전송<br>
+    App-Server -->> App-Server: Register-Token 저장<br>
 </div>
 
 ### FCM PushService를 이용해 메시지 전달 과정  
 <div class="mermaid"> 
 sequenceDiagram;
-    App-Server ->> FCM-Server: Http Post방식으로 메시지 전송<br/>(with Register-Token, Firebase-API-Key)  
-    FCM-Server -->> FCM-Server: Register-Token 으로부터 Target 식별<br/>(Platform, Application)  
-    FCM-Server ->> Mobile: 메시지 전송  
+    App-Server ->> FCM-Server: Http Post방식으로 메시지 전송<br/>(with Register-Token, Firebase-API-Key)<br>
+    FCM-Server -->> FCM-Server: Register-Token 으로부터 Target 식별<br/>(Platform, Application)<br>  
+    FCM-Server ->> Mobile: 메시지 전송<br>
 </div>  
 
 <hr>
@@ -181,7 +181,7 @@ public class FCMService {
 __내 예제 코드는 MVC로 구현했는데 사실 이러한 푸시 메시징은 비동기로 구현하는게 맞다.__  
 클라이언트의 요청을 앱 서버가받고, 앱 서버가 FCM 서버로 메시지를 전송하는 구조로 구현을 했는데  
 클라이언트의 입장에서는 굳이 앱 서버가 FCM 서버로 메시지를 전달하는것까지 기다려야할까?  
-<strong_red>(클라이언트의 요청과 앱서버가 FCM서버로 메시지 전송하는게 하나의 트랙잭션으로 구성될 필요가 없다.)</strong_red>  
+<br><strong_red>(클라이언트의 요청과 앱서버가 FCM서버로 메시지 전송하는게 하나의 트랙잭션으로 구성될 필요가 없다.)</strong_red>  
 ~~조만간 코틀린 공부를 시작할 예정인데 코틀린이 손에 조금 익으면 코틀린 + 웹플럭스를 이용해서 웹플럭스 공부를 해봐야겠다.~~  
 
 <hr>
