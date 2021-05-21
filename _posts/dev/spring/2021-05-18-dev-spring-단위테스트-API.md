@@ -10,7 +10,7 @@ comments: true
 # SpringBoot 테스트 방법  
 
 Spring이 아니어도 단위 테스트는 굉장히 중요한 기능아다.  
-
+<br>
 <strong_black>내가 구현한 코드가 요구사항을 제대로 반영했는지, 예외케이스가 제대로 떨어지는지, 또다른 버그는 없는지  
 개발자가 본인 코드의 무결성을 검증하기 위한 필수적인 작업이라고 생각한다.</strong_black>   
 
@@ -255,7 +255,7 @@ public class MemberControllerTest {
 
 오늘 작성할 포스팅의 목적인 테스트 코드다!  
 <br>
-<strong_purple>@WebMvcTest 애너테이션을 사용하면 Controller만 떼어내서 테스트가 가능하다.</strong_purple>  
+<strong_purple>@WebMvcTest 애너테이션을 사용하면 Controller만 떼어내서 테스트가 가능하다.</strong_purple>
 @Controller, @ControllerAdvice, @JsonComponent, @Converter 등등 Web과 관련된 Bean들만 등록된다.  
 따라서 @Service, @Repository와 같이 Web과 직접 관련이 없는 Bean들은 사용할 수 없다.  
 
@@ -285,10 +285,9 @@ private MemberService memberService;
 
 이렇게 테스트 코드를 실행하면 MemberController는 MemberService에 의존하기위해 위의 MockBean을 사용하게 된다.  
 그런데 MemberController의 join 메서드를 보면 MemberJoinRequestDto 객체를 전달받는다.  
-그리고 생성된 회원Id를 반환하는데, 저 가짜 memberService가 무슨 값을 던져줄까?  
-
+그리고 생성된 회원Id를 반환하는데, 저 가짜 memberService가 무슨 값을 던져줄까?
+<br>
 <strong_black>테스트해보니까 그냥 0으로 반환한다.  일반 객체라면 null이 반환될 것 으로 예상된다.</strong_black>  
-
 그렇다면 항상 회원Id는 0이 반환될텐데, 이것만보고 '아~ HttpStatus=200 이면 정상이네. 성공' 이라고 말할 수 있을까?  
 
 나는 처음 가입한 순서대로 Id를 발급할거라 처음 가입한사람의 Id가 1이 맞는지 보고 싶은데 이건 어떻게 테스트해야하지?  

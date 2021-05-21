@@ -28,8 +28,8 @@ Repository는 엔티티를 영속화하기위해 사용된다.
 비즈니스 로직을 수행하고 난 도메인을 영속화해야하는데 이 기능을 저장소 영역으로 위임한다.  
 __따라서 Repository의 기능만 테스트를 하려면 Service와의 결합을 끊어야 한다.__  
 
-SpringBoot 테스트는 __@DataJpaTest__ Annottation을 제공하는데, 이것을 통해 Repository의 단위 테스트가 가능하다.  
-
+SpringBoot 테스트는 __@DataJpaTest__ Annottation을 제공하는데, 이것을 통해 Repository의 단위 테스트가 가능하다.
+<br>
 <strong_blue>@DataJpaTest을 사용할경우 아래와 같은 기능이 수행된다.</strong_blue>  
 - JPA 관련된 설정만 로드한다.  (WebMVC와 관련된 Bean이나 기능은 로드되지 않는다)  
 - JPA를 사용해서 생성/조회/수정/삭제 기능의 테스트가 가능하다.  
@@ -92,12 +92,12 @@ API, Repository, Service Test 중 개인적으로 Service Test가 제일 어려�
 
 Service는 위로는 Controller, 아래로는 Domain에 의존하고 있다.  
 따라서 결합을 두 군데나 끊어야 한다. (이것때문에 어려웠던 것 같다.)  
-
-<strong_red>먼저 Controller와의 연결을 끊어야한다.</strong_red>  
+<br>
+<strong_red>먼저 Controller와의 연결을 끊어야한다.</strong_red>
 Controller는 Web모듈이므로 Service Test를 진행하려면 Web에 대한 의존성을 받으면 안된다.
 따라서 @WebMvcTest, @SpringBootTest와 같은 테스트를 사용하면 Service만을 테스트하기가 어려워진다.  
-
-<strong_red>두 번째로 Repository와의 연결을 끊어야 한다.</strong_red>  
+<br>
+<strong_red>두 번째로 Repository와의 연결을 끊어야 한다.</strong_red>
 Domain을 통해 비즈니스 로직은 수행해야하지만, 실제로 DB에 저장할 건 아니기 때문에 이 부분을 제거할 방법이 필요하다.  
 SpringBoot 테스트는 특정 객체를 가짜로 대체할 Mocking을 제공하고 있고, 아래와 같은 Annotation을 제공한다.  
 @Mock, @MockBean, @Spy, @SpyBean  
