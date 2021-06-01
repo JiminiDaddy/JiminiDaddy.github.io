@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: http://jiminiDaddy.github.io/sitemap.xml
