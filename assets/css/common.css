@@ -1,36 +1,39 @@
-<style>
 todo {
-color: green;
-	   font-weight: bold;
+	color: green;
+	font-weight: bold;
 }
+
 strong_blue {
-		background-color: BurlyWood;
-color: blue;
-width: 100%;
-	   text-decoration: underline;
+	background-color: BurlyWood;
+	color: blue;
+	width: 100%;
+	text-decoration: underline;
 }
+
 strong_deepblue {
-		background-color: OldLace;
-color: MidnightBlue;
-width: 100%;
-	   text-decoration: underline;
+	background-color: OldLace;
+	color: MidnightBlue;
+	width: 100%;
+	text-decoration: underline;
 }
+
 strong_purple {
-		background-color: Plum;
-color: RebeccaPurple;
-width: 100%;
-	   text-decoration: underline;
+	background-color: Plum;
+	color: RebeccaPurple;
+	width: 100%;
+	text-decoration: underline;
 }
+
 strong_red {
-		background-color: Azure;
-color: red;
-width: 100%;
-	   text-decoration: underline;
+	background-color: Azure;
+	color: red;
+	width: 100%;
+	text-decoration: underline;
 }
+
 strong_black {
-		background-color: DarkKhaki;
-color: black;
-width: 100%;
-	   text-decoration: underline;
+	background-color: DarkKhaki;
+	color: black;
+	width: 100%;
+	text-decoration: underline;
 }
-</style>
