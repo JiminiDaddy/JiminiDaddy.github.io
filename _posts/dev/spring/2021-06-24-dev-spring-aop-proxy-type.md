@@ -20,7 +20,7 @@ Spring AOP는 Proxy 객체를 생성하여 Target(핵심 기능)에 Aspect(공�
 
 Java 1.3에서 생긴 기능이고 Interface 기반으로 Proxy 객체를 생성한다.  
 만약 인터페이스가 아닌 클래스에 AOP를 사용하려고 하면 CGLib방식으로 동작하게된다.  
-  
+<br/>
 <strong_red>이 방식은 InvocationHandler 인터페이스를 구현하게되는데, 런타임에 Target에 대해 Reflection을 사용한다.</strong_red>  
   
 따라서 다소 성능이 떨어지는 단점이 있다.  
@@ -41,7 +41,7 @@ SpringBoot는 굳이 불필요한 인터페이스를 사용하지 않고 Service
 (설정을 통해 JDK-Dynamic Proxy로 변경될 수 있다.)  
 
 이 방식은 Refrection을 사용하지 않고, 상속을 통해 Proxy 객체를 생성한다.  
-  
+<br/>
 <strong_red>런타임에 SpringContainer가 올라가면 Bean으로 등록할 클래스들을 탐색한 뒤 등록하는 과정이 있는데, 이 때 Proxy 객체가 함께 생성되어 Target대신 Bean으로 등록된다.</strong_red>  
   
 Proxy 객체는 Target(원본 대상객체)을 상속받아 구현된다.  
